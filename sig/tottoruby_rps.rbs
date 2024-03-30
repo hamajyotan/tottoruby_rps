@@ -42,7 +42,7 @@ module TottorubyRps
     end
 
     class Computer < Base
-      def shoot: -> Gesture?
+      def shoot: -> Gesture
     end
 
     class Console < Base
