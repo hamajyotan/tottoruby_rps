@@ -19,7 +19,7 @@ module TottorubyRps
     end
 
     class Computer < Base
-      def shoot = TottorubyRps::Gesture::GESTURES.sample
+      def shoot = TottorubyRps::Gesture::GESTURES.sample #: TottorubyRps::Gesture
     end
 
     class Console < Base
