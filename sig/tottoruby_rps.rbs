@@ -1,4 +1,52 @@
+# TypeProf 0.21.9
+
+# Classes
 module TottorubyRps
   VERSION: String
-  # See the writing guide of rbs: https://github.com/ruby/rbs#guides
+
+  class Even < RuntimeError
+  end
+
+  class Game
+    def call: -> nil
+    def run: -> nil
+
+    private
+    def choice_player_type: (String name) -> untyped
+  end
+
+  class Gesture
+    ROCK: Gesture
+    PAPER: Gesture
+    SCISSORS: Gesture
+    GESTURES: [Gesture, Gesture, Gesture]
+    @names: String
+
+    def initialize: (:paper | :rock | :scissors value) -> void
+    def judge: (untyped other) -> Integer
+    def name: -> String
+    attr_reader value: :paper | :rock | :scissors
+  end
+
+  module Player
+    def self.players: -> Array[untyped]
+
+    class Base
+      @win_count: Integer
+
+      attr_reader name: untyped
+      def initialize: (untyped name) -> void
+      def shoot: -> untyped
+      def win_count: -> Integer
+      def win: -> Integer
+    end
+
+    class Computer < Base
+      def shoot: -> Gesture?
+    end
+
+    class Console < Base
+      def shoot: -> Gesture
+    end
+  end
 end
